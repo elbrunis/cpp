@@ -1,5 +1,4 @@
-# include "PhoneBook.hpp"
-#include <cstdlib>
+#include "PhoneBook.hpp"
 
 void PhoneBook::initContact(std::string Name, std::string LastName,
 						std::string NickName, std::string PhoneNumber, std::string DarkSecret)
@@ -9,6 +8,7 @@ void PhoneBook::initContact(std::string Name, std::string LastName,
 	Contacts[NextID].setContact(Name, LastName, NickName, PhoneNumber, DarkSecret);
 	NextID = (NextID + 1) % MAX_ID;
 }
+
 void PhoneBook::printBook(std::string str)
 {
 	int len = str.size();
@@ -47,7 +47,6 @@ void PhoneBook::search()
 	{
 		if (Contacts[i].exists() == true)
 		{
-
 			for (int j = 0; j < 4; j++)
 			{
 				if (j == 0)
@@ -61,12 +60,20 @@ void PhoneBook::search()
 			}
 			std::cout << '|' << std::endl;
 		}
-		else
-			break;
 	}
+
 	std::cout << "Index to display: ";
 	std::string input;
-	std::cin >> input;
-	int index = atoi(input.c_str());
-	this->printContact(Contacts[index]);
+	std::getline(std::cin, input);
+	if (std::cin.eof())
+	{
+		std::cout << std::endl;
+		return;
+	}
+	if (input.length() == 1 && input[0] >= '0' && input[0] <= '7')
+	{
+		int index = input[0] - '0';
+		if (Contacts[index].exists())
+			printContact(Contacts[index]);
+	}
 }

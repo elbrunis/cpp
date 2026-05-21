@@ -1,56 +1,106 @@
 #include "header.hpp"
 
-void	start_program(void)
-{
-	std::system("clear");
-	std::cout << "Starting program...\n";
-	//sleep(2);
-	std::system("clear");
-	std::cout << "\033[90m--------------------------\n";
-	std::cout << "Welcome to your PhoneBook!\n";
-	std::cout << "--------------------------\033[0m\n";
-	std::cout << '\n';
-}
-
 void	add_contact(PhoneBook& myBook)
 {
-	std::cout << "First name: ";
 	std::string Name;
-	std::cin >> Name;
-		std::cout << "Last name: ";
+	while (Name.empty())
+	{
+		std::cout << "First name: ";
+		std::getline(std::cin, Name);
+
+		if (std::cin.eof())
+			return;
+
+		if (Name.empty())
+			std::cout << "A saved contact can't have empty fields"
+				<< std::endl;
+	}
+
 	std::string LastName;
-	std::cin >> LastName;
-		std::cout << "Nickname: ";
+	while (LastName.empty())
+	{
+		std::cout << "Last name: ";
+		std::getline(std::cin, LastName);
+
+		if (std::cin.eof())
+			return;
+
+		if (LastName.empty())
+			std::cout << "A saved contact can't have empty fields"
+				<< std::endl;
+	}
+
 	std::string NickName;
-	std::cin >> NickName;
-		std::cout << "Phone number: ";
+	while (NickName.empty())
+	{
+		std::cout << "Nickname: ";
+		std::getline(std::cin, NickName);
+
+		if (std::cin.eof())
+			return;
+
+		if (NickName.empty())
+			std::cout << "A saved contact can't have empty fields"
+				<< std::endl;
+	}
+
 	std::string PhoneNumber;
-	std::cin >> PhoneNumber;
-		std::cout << "Darkest secret: ";
+	while (PhoneNumber.empty())
+	{
+		std::cout << "Phone number: ";
+		std::getline(std::cin, PhoneNumber);
+
+		if (std::cin.eof())
+			return;
+
+		if (PhoneNumber.empty())
+			std::cout << "A saved contact can't have empty fields"
+				<< std::endl;
+	}
+
 	std::string DarkSecret;
-	std::cin >> DarkSecret;
-	myBook.initContact(Name, LastName, NickName, PhoneNumber, DarkSecret);
+	while (DarkSecret.empty())
+	{
+		std::cout << "Darkest secret: ";
+		std::getline(std::cin, DarkSecret);
+
+		if (std::cin.eof())
+			return;
+
+		if (DarkSecret.empty())
+			std::cout << "A saved contact can't have empty fields"
+				<< std::endl;
+	}
+
+	myBook.initContact(Name, LastName, NickName,
+		PhoneNumber, DarkSecret);
 }
 
 int	main()
 {
-	start_program();
+	std::cout << "\033[90m--------------------------\n";
+	std::cout << "Welcome to your PhoneBook!\n";
+	std::cout << "--------------------------\033[0m\n";
+	std::cout << '\n';
 	std::string cmd;
 	PhoneBook myBook;
 	while (1)
 	{
 		std::cout << "Please enter a command (ADD, SEARCH, EXIT): ";
-		std::cin >> cmd;
+		std::getline(std::cin, cmd);
+		if (std::cin.eof())
+		{
+			std::cout << std::endl;
+			break;
+		}
 		if (cmd == "ADD")
 			add_contact(myBook);
-		else if (cmd  == "SEARCH")
+		else if (cmd == "SEARCH")
 			myBook.search();
 		else if (cmd == "EXIT")
 			break;
 		else
-		{
-			std::cout << "Invalid command please try again... " << std::endl;
-		}
+			std::cout << "Invalid command please try again..." << std::endl;
 	}
 	return (0);
 }
