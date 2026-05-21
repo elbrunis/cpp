@@ -94,9 +94,17 @@ int	main()
 			break;
 		}
 		if (cmd == "ADD")
+		{
 			add_contact(myBook);
+			if (std::cin.eof())
+				break;
+		}
 		else if (cmd == "SEARCH")
+		{
 			myBook.search();
+			if (std::cin.eof())
+				break;
+		}
 		else if (cmd == "EXIT")
 			break;
 		else
