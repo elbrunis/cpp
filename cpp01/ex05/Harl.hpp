@@ -4,11 +4,11 @@
 #include <string>
 #include <iostream>
 
-class harl
+class Harl
 {
 	public:
 		void complain( std::string level );
-		harl(void){};
+		Harl(void);
 
 	private:
 		void debug( void );

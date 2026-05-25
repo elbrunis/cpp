@@ -7,7 +7,7 @@ int main(int argc, char **argv)
 		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 		return (0);
 	}
-	harl harl1;
+	Harl harl1;
 	std::string test = argv[1];
 	std::string level[] = {
 			"DEBUG",

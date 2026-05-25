@@ -1,5 +1,8 @@
 #include "Zombie.hpp"
 
+Zombie::Zombie(void)
+{
+}
 
 void	Zombie::nameZombie(std::string name)
 {

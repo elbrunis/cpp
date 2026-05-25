@@ -15,6 +15,9 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
+%.o: %.cpp
+	$(CC) $(FLAGS) -c $< -o $@
+
 # Limpieza de objetos
 clean:
 	rm -f $(OBJ)
