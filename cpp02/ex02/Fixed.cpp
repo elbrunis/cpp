@@ -23,6 +23,11 @@ Fixed::Fixed(const float n)
 
 
 
+// destructor
+Fixed::~Fixed()
+{
+}
+
 // operaciones
 // get info and set bits
 int	Fixed::getRawBits(void) const

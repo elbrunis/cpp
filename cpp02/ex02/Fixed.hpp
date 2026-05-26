@@ -47,7 +47,7 @@ class Fixed
 		Fixed &operator=(const Fixed &src);
 
 
-		~Fixed(){};
+		~Fixed();
 
 		// get info and set bits
 		int					getRawBits( void ) const;
