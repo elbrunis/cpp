@@ -3,6 +3,7 @@
 # define BRAIN_HPP
 
 #include <iostream>
+#include <string>
 
 class Brain
 {
@@ -15,7 +16,7 @@ class Brain
 		Brain& operator=(const Brain& other);
 
 		void			setIdea(int id, std::string idea);
-		const std::string&	getIdea(int id);
+		const std::string&	getIdea(int id) const;
 
 	private:
 

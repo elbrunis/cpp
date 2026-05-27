@@ -22,7 +22,7 @@ WrongAnimal::~WrongAnimal()
 
 WrongAnimal&	WrongAnimal::operator=(const WrongAnimal& other)
 {
-	std::cout << "WrongAnimal Copy constructor called" << std::endl;
+	std::cout << "WrongAnimal Assignment operator called" << std::endl;
 
 	if (this != &other)
 		this->type = other.type;

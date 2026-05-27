@@ -19,7 +19,7 @@ int main()
 	std::cout << "\033[34m-----------ARRAY TEST-------------\033[0m" << std::endl;
 	
 	std::cout << "\033[32mCreate:\n\033[0m" << std::endl;
-	int size = 4; // Cambiado a 4 para que sea par y simétrico
+	const int size = 4; // Cambiado a 4 para que sea par y simétrico
 	Animal* animals[size];
 	for(int i = 0; i < size ; i++)
 	{
