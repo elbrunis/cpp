@@ -1,12 +1,12 @@
-#ifndef SCRAVTRAP_CPP
-# define SCRAVTRAP_CPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap
 {
 	public:
-		ScavTrap(std::string name);
+		ScavTrap(const std::string& _name);
 		ScavTrap(void);
 		ScavTrap(const ScavTrap& cpy);
 		~ScavTrap();

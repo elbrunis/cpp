@@ -1,6 +1,6 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(const std::string& _name) : ClapTrap(_name)
 {
 	std::cout << "FragTrap " << this->name << " has been constructed!" << std::endl;
 	this->attack_damage = 30;

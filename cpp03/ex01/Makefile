@@ -5,7 +5,7 @@ RM          = rm -rf
 
 OBJ_DIR     = obj/
 
-SRC         = main.cpp ClapTrapp.cpp ScavTrap.cpp
+SRC         = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJ         = $(SRC:%.cpp=$(OBJ_DIR)%.o)
 
 all: $(NAME)

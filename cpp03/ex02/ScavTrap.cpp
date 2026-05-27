@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(const std::string& _name) : ClapTrap(_name)
 {
 	std::cout << "ScavTrap " << this->name << " has been constructed!" << std::endl;
 	this->attack_damage = 20;

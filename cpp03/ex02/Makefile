@@ -3,7 +3,7 @@ CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
 
-SRCS		= main.cpp ClapTrapp.cpp ScavTrap.cpp FragTrap.cpp
+SRCS		= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJS		= $(SRCS:.cpp=.o)
 
 all: $(NAME)

@@ -8,10 +8,10 @@ class ClapTrap
 {
 	public:
 
-		ClapTrap(const std::string name);
+		ClapTrap(const std::string& _name);
 		ClapTrap(void);
 		ClapTrap(const ClapTrap& otro);
-		~ClapTrap();
+		virtual ~ClapTrap();
 
 		ClapTrap& operator=(const ClapTrap& otro);
 
