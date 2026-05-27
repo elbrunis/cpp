@@ -19,7 +19,7 @@ class Cat : public Animal
 		std::string getType(void) const;
 		//brain
 		void	setIdea(int id, std::string idea);
-		const std::string&	getIdea(int id);
+		const std::string&	getIdea(int id) const;
 	
 	private:
 		Brain *brain;

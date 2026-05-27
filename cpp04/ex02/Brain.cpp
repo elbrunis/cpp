@@ -37,9 +37,9 @@ void	Brain::setIdea(int id, std::string idea)
 		std::cout << "The idea could not be assigned!!" << std::endl;
 }
 
-const std::string&	Brain::getIdea(int id)
+const std::string&	Brain::getIdea(int id) const
 {
-	static std::string empty = "";
+	static const std::string empty = "";
 	if (id >= 0 && id < 100)
 		return(this->ideas[id]);
 	else
